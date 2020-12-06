@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'dotenv-rails'
 
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master', group: :development
+
 gem 'devise'
 
 # Use Active Storage variant
