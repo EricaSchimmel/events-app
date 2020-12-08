@@ -15,10 +15,15 @@
 
 ## Technologies
 
+- Ruby Version 2.6.1
 - [Rails 6](https://github.com/rails/rails)
 - [PostgreSQL](https://github.com/ged/ruby-pg)
 - [Devise](https://github.com/heartcombo/devise) - Authentication
-- [RSpec Rails](https://github.com/rspec/rspec-rails) - Testing Framework
+- Testing:
+  - [RSpec Rails](https://github.com/rspec/rspec-rails) - Testing Framework
+  - [Capybara](https://github.com/teamcapybara/capybara)
+  - [Factory Bot Rails](https://github.com/thoughtbot/factory_bot_rails)
+  - [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner)
 
 ## Installation
 
