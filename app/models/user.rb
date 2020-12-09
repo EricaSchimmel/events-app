@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validate :valid_name
   validates :name, presence: true, length: { maximum: 30, minimum: 2 }
 
+  has_many :hosted_events, :class_name => "Event", :foreign_key => :host_id
+
   private 
 
   def valid_name
