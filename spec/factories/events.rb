@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :event do
-    user
+    host
     title { "Test Event" }
     description { "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." }
     online { true }

@@ -41,7 +41,7 @@ RSpec.describe User, type: :model do
   end 
 
   it "is valid with a valid name" do 
-    user2 = build(:user, email: Faker::Internet.email, name: Faker::Name.name)
+    user2 = build(:user, email: Faker::Internet.email, name: Faker::Name.first_name)
 
     expect(user2).to be_valid
   end 
