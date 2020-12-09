@@ -24,6 +24,7 @@
   - [Capybara](https://github.com/teamcapybara/capybara)
   - [Factory Bot Rails](https://github.com/thoughtbot/factory_bot_rails)
   - [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner)
+  - [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers)
   - [Spring-Commands-Rspec](https://github.com/jonleighton/spring-commands-rspec)
 
 ## Installation
