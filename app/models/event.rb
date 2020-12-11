@@ -10,5 +10,5 @@ class Event < ApplicationRecord
 
   def event_is_online?
     online == true
-  end 
+  end
 end

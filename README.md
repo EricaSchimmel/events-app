@@ -25,6 +25,7 @@
   - [Factory Bot Rails](https://github.com/thoughtbot/factory_bot_rails)
   - [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner)
   - [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers)
+  - [Faker](https://github.com/faker-ruby/faker)
   - [Spring-Commands-Rspec](https://github.com/jonleighton/spring-commands-rspec)
 
 ## Installation
@@ -65,7 +66,7 @@ To run tests:
   ```
 - A specific file:
   ```bash
-    bin/rspec spec/models/user_spec.rb
+  bin/rspec spec/models/user_spec.rb
   ```
 
 ## Status
