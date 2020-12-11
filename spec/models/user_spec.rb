@@ -54,6 +54,6 @@ RSpec.describe User, type: :model do
 
   describe "associations" do 
     it { should have_many(:hosted_events).class_name("Event") }
-    it { should have_many(:reserved_events) }
+    it { should have_many(:reserved_events).class_name("Reservation") }
   end 
 end
