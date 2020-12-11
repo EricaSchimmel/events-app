@@ -10,10 +10,12 @@ RSpec.describe User, type: :model do
 
     it { should validate_presence_of(:name) }
     it { should validate_length_of(:name).is_at_least(2).is_at_most(30) }
+    it { should allow_value("Mr. Jack").for(:name) }
     it { should_not allow_value("1Jack").for(:name) }
 
     it { should validate_presence_of(:email) }
     it { should validate_uniqueness_of(:email).case_insensitive }
+    it { should allow_value("test_user@example.com").for(:email) }
     it { should_not allow_value("test user@example.com").for(:email) }
 
     it { should validate_presence_of(:password) }

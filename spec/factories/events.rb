@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :event do
     host
-    title { "Test Event" }
-    description { "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." }
+    title { Faker::Lorem.sentence }
+    description { Faker::Lorem.paragraph }
     online { true }
     date { Date.today }
     start_time { "14:00" }
