@@ -12,6 +12,6 @@ class User < ApplicationRecord
   private 
 
   def valid_name
-    errors.add(:name, "must only contain letters and spaces") if name =~ /[^a-zA-Z\s]/
+    errors.add(:name, "must only contain letters and spaces") if name =~ /[^a-zA-Z\s.]/
   end 
 end

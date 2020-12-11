@@ -1,59 +1,28 @@
 require 'rails_helper'
-require 'faker'
 
 RSpec.describe User, type: :model do
-  before(:each) do 
-    @user = build(:user)
-  end 
+  subject { build(:user) }
+
   describe "validations" do
     it "is valid with valid attributes" do 
-      expect(@user).to be_valid 
+      expect(subject).to be_valid 
     end
 
-    it "is not valid with a invalid email" do 
-      @user.email = "test @example.com"
-      expect(@user).to_not be_valid 
-    end 
+    it { should validate_presence_of(:name) }
+    it { should validate_length_of(:name).is_at_least(2).is_at_most(30) }
+    it { should_not allow_value("1Jack").for(:name) }
 
-    it "is not valid when passwords do not match" do 
-      @user.password_confirmation = "asdf"
-      expect(@user).to_not be_valid
-    end 
+    it { should validate_presence_of(:email) }
+    it { should validate_uniqueness_of(:email).case_insensitive }
+    it { should_not allow_value("test user@example.com").for(:email) }
 
-    it "is not valid without an email" do 
-      @user.email = nil
-      expect(@user).to_not be_valid
-    end 
-
-    it "is not valid without a password" do 
-      @user.password = nil
-      expect(@user).to_not be_valid 
-    end 
-
-    it "is not valid without a name" do 
-      @user.name = nil
-      expect(@user).to_not be_valid
-    end 
-
-    it "is valid with a valid name" do 
-      expect(@user).to be_valid
-    end 
-
-    it "is not valid with a invalid name" do 
-      @user.name = "1Jack"
-      expect(@user).to_not be_valid 
-    end 
-
-    it "is not valid with a existing email" do
-      user2 = create(:user, email: Faker::Internet.email)
-      @user.email = user2.email
-
-      expect(@user).to_not be_valid
-    end 
+    it { should validate_presence_of(:password) }
+    it { should validate_length_of(:password).is_at_least(6).is_at_most(128) }
+    it { should validate_confirmation_of(:password) }  
   end 
 
   describe "associations" do 
-    it { should have_many(:hosted_events).class_name("Event") }
-    it { should have_many(:reserved_events).class_name("Reservation") }
+    it { should have_many(:hosted_events).class_name("Event").with_foreign_key("host_id") }
+    it { should have_many(:reserved_events).class_name("Reservation").with_foreign_key("guest_id") }
   end 
 end
