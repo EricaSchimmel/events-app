@@ -9,6 +9,18 @@ RSpec.describe Event, type: :model do
     it { should validate_presence_of(:date) }
     it { should validate_presence_of(:start_time) }
     it { should_not allow_value(nil).for(:online) } 
+
+    it "is not valid when the event is online and does not supply a link" do 
+      subject.online_link = nil 
+      expect(subject).to_not be_valid 
+    end 
+
+    it "is valid when the event is not online and does not supply a link" do 
+      subject.online = false 
+      subject.online_link = nil
+
+      expect(subject).to be_valid 
+    end 
   end 
 
   describe "associations" do 
