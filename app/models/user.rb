@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 30, minimum: 2 }, format: { without: /[^a-zA-Z\s.]/, message: "cannot contain numbers" }
 
   has_many :hosted_events, :class_name => "Event", :foreign_key => :host_id
+  has_many :reservations
 end

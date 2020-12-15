@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :host, :class_name => "User"
+  has_many :guests, :class_name => "Reservation"
 
   validates_presence_of :title, :description, :date, :start_time
   validates :online, exclusion: [nil]
