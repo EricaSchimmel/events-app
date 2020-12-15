@@ -25,6 +25,6 @@ RSpec.describe User, type: :model do
 
   describe "associations" do 
     it { should have_many(:hosted_events).class_name("Event").with_foreign_key("host_id") }
-    it { should have_many(:reserved_events).class_name("Reservation").with_foreign_key("guest_id") }
+    it { should have_many(:reservations).through(:reservation) }
   end 
 end

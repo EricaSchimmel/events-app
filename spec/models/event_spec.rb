@@ -25,6 +25,6 @@ RSpec.describe Event, type: :model do
 
   describe "associations" do 
     it { should belong_to(:host).class_name("User") }
-    it { should have_many(:guests).class_name("Reservation") }
+    it { should have_many(:guests).through(:resrvation) }
   end 
 end
