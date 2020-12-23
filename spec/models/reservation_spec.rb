@@ -1,7 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Reservation, type: :model do
+  subject { build(:reservation) }
+
   describe "validations" do 
+    it "should be valid when feedback is not given" do 
+      subject.feedback = nil 
+      expect(subject).to be_valid
+    end 
   end 
 
   describe "associations" do 
