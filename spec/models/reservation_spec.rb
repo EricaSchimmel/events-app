@@ -5,7 +5,7 @@ RSpec.describe Reservation, type: :model do
 
   describe "validations" do 
     it "should be valid when feedback is not given" do 
-      subject.feedback = nil 
+      subject.review = nil 
       expect(subject).to be_valid
     end 
   end 
