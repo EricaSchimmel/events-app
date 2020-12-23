@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'dotenv-rails'
 gem 'devise'
 
+gem 'pagy'
+
 # Oauth
 # gem 'omniauth-google-oauth2'
 # gem 'omniauth-rails_csrf_protection'
