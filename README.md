@@ -19,6 +19,7 @@
 - [Rails 6](https://github.com/rails/rails)
 - [PostgreSQL](https://github.com/ged/ruby-pg)
 - [Devise](https://github.com/heartcombo/devise) - Authentication
+- [Pagy](https://github.com/ddnexus/pagy)
 - Testing:
   - [RSpec Rails](https://github.com/rspec/rspec-rails) - Testing Framework
   - [Capybara](https://github.com/teamcapybara/capybara)
