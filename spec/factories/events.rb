@@ -7,7 +7,7 @@ FactoryBot.define do
     date { Date.today }
     start_time { "14:00" }
     end_time { "15:00" }
-    online_link { "https//www.example.com" }
+    online_link { Faker::Internet.url }
     attendee_limit { 15 }
   end
 end
