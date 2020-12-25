@@ -32,8 +32,21 @@ gem 'pagy'
 # gem 'omniauth-rails_csrf_protection'
 
 # Mobile support to integrate later
-# gem 'tiddle
-# gem 'devise-doorkeeper'
+  # Token Auth
+  # gem 'tiddle
+  # gem 'devise-doorkeeper'
+
+  # Json Serializers
+  # gem 'oj'
+  # gem 'oj_mimic_json'
+  # gem 'multi_json'
+
+  # Versioning
+  # gem 'versioncake'
+
+# Production Debug
+# gem 'lograge'
+# gem 'pghero'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
