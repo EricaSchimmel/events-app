@@ -35,10 +35,10 @@ To install the project fork or clone this repo.
 
 ## Setup
 
-To run the project first migrate the database with the following:
+To setup and run the project, first setup the database with the following:
 
 ```bash
-rails db:migrate
+rails db:setup
 ```
 
 And then start up a local server using:
