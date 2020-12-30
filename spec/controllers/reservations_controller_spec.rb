@@ -4,7 +4,7 @@ RSpec.describe ReservationsController, type: :controller do
     describe "GET #index" do 
     end 
     
-    desribe "PUT #create" do 
+    describe "PUT #create" do 
     end 
 
     describe "DELETE #destroy" do
