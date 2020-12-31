@@ -61,6 +61,11 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'database_cleaner-active_record'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-performance', require: false
 end
 
 group :test do

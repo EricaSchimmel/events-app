@@ -8,7 +8,7 @@ class Event < ApplicationRecord
   validates :online_link, presence: true, format: { with: URI.regexp }, if: :event_is_online?
   validate :attendee_limit_reached?, on: :update, unless: -> { attendee_limit.nil? }
 
-  private 
+  private
 
   def event_is_online?
     online == true
@@ -17,6 +17,6 @@ class Event < ApplicationRecord
   def attendee_limit_reached?
     if attendee_limit <= guests.count
       errors.add(:guests, "limit is reached")
-    end 
-  end 
+    end
+  end
 end
