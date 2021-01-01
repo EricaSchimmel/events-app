@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ReservationsController, type: :controller do
+RSpec.describe ReservationsController, :type => :controller do
     describe "GET #index" do 
     end 
     
