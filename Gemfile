@@ -27,6 +27,8 @@ gem 'devise'
 
 gem 'pagy'
 
+gem 'validates_timeliness', '~> 5.0.0.beta1'
+
 # Oauth
 # gem 'omniauth-google-oauth2'
 # gem 'omniauth-rails_csrf_protection'
