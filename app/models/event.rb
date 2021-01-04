@@ -5,6 +5,8 @@ class Event < ApplicationRecord
   validates_presence_of :title, :description, :start_date, :start_time
   validates :online, :exclusion => [nil]
 
+  validates_date :start_date, on_or_after: :today
+
   validates :online_link, :presence => true, :format => { :with => URI.regexp }, :if => :event_is_online?
   validate :attendee_limit_reached?, :on => :update, :unless => -> { attendee_limit.nil? }
 
