@@ -6,7 +6,7 @@ RSpec.describe Event, :type => :model do
   describe "validations" do
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:description) }
-    it { should validate_presence_of(:date) }
+    it { should validate_presence_of(:start_date) }
     it { should validate_presence_of(:start_time) }
     it { should_not allow_value(nil).for(:online) }
 
@@ -22,12 +22,12 @@ RSpec.describe Event, :type => :model do
       expect(subject).to be_valid
     end
 
-    it "is valid with a current or future date" do
+    it "is valid with a current or future start date" do
       expect(subject).to be_valid
     end
 
     it "is not valid with a past date" do
-      subject.date = Date.yesterday
+      subject.start_date = Date.yesterday
       expect(subject).to_not be_valid
     end
   end

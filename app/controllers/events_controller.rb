@@ -3,27 +3,27 @@ class EventsController < ApplicationController
     before_action :set_event, :only => [:show, :edit, :update, :destroy]
 
     def new
-    end 
-    
+    end
+
     def create
-    end 
+    end
 
     def edit
-    end 
+    end
 
     def update
-    end 
+    end
 
     def destroy
-    end 
+    end
 
-    private 
+    private
 
     def set_event
         @event = Event.find(params[:id])
     end
 
     def event_params
-        params.require(:event).permit(:title, :date, :description, :online, :online_link, :attendee_limit, :start_time, :end_time)
-    end  
+        params.require(:event).permit(:title, :start_date, :description, :online, :online_link, :attendee_limit, :start_time, :end_time)
+    end
 end
