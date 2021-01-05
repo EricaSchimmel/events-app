@@ -26,7 +26,7 @@ RSpec.describe Event, :type => :model do
       expect(subject).to be_valid
     end
 
-    it "is not valid with a past date" do
+    it "is not valid with a start date in the past" do
       subject.start_date = Date.yesterday
       expect(subject).to_not be_valid
     end
