@@ -22,21 +22,26 @@ RSpec.describe Event, :type => :model do
       expect(subject).to be_valid
     end
 
-    it "is valid with a current or future start date" do
+    it "is valid with a current or future start_date" do
       expect(subject).to be_valid
     end
 
-    it "is not valid with a start date in the past" do
+    it "is not valid with a start_date in the past" do
       subject.start_date = DateTime.now - 1
       expect(subject).to_not be_valid
     end
 
-    it "is valid with a current or future end date" do
+    it "is valid with a current or future end_date" do
       expect(subject).to be_valid
     end
 
     it "is not valid with a end date in the past" do
       subject.end_date = DateTime.now - 1
+      expect(subject).to_not be_valid
+    end
+
+    it "is not valid with a end_date's time that is the same as the start_date's time" do
+      subject.end_date = subject.start_date
       expect(subject).to_not be_valid
     end
   end
