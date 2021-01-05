@@ -11,12 +11,12 @@ user1 = User.first
 user2 = User.second
 user3 = User.third
 
-user1.hosted_events.create(
-    title: Faker::Lorem.sentence,
-    description: Faker::Lorem.paragraph,
-    online: true,
-    start_date: Faker::Date.between( from: Date.today, to: 7.days.from_now),
-    end_time: "15:00",
-    online_link: Faker::Internet.url,
-    attendee_limit: 15
-)
+# user1.hosted_events.create(
+#     title: Faker::Lorem.sentence,
+#     description: Faker::Lorem.paragraph,
+#     online: true,
+#     start_date: Faker::Date.between( from: Date.today, to: 7.days.from_now),
+#     end_date: "15:00",
+#     online_link: Faker::Internet.url,
+#     attendee_limit: 15
+# )
