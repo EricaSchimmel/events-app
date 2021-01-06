@@ -4,8 +4,8 @@ RSpec.describe User, :type => :model do
   subject { build(:user) }
 
   describe "validations" do
-    it "is valid with valid attributes" do 
-      expect(subject).to be_valid 
+    it "is valid with valid attributes" do
+      expect(subject).to be_valid
     end
 
     it { should validate_presence_of(:name) }
@@ -20,11 +20,11 @@ RSpec.describe User, :type => :model do
 
     it { should validate_presence_of(:password) }
     it { should validate_length_of(:password).is_at_least(6).is_at_most(128) }
-    it { should validate_confirmation_of(:password) }  
-  end 
+    it { should validate_confirmation_of(:password) }
+  end
 
-  describe "associations" do 
+  describe "associations" do
     it { should have_many(:hosted_events).class_name("Event").with_foreign_key("host_id") }
     it { should have_many(:reservations) }
-  end 
+  end
 end
