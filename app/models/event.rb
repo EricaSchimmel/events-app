@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
-  belongs_to :host, :class_name => "User"
-  has_many :guests, :class_name => "Reservation"
+  belongs_to :host, :class_name => 'User'
+  has_many :guests, :class_name => 'Reservation'
 
   validates_presence_of :title, :description, :start_date, :end_date
   validates :online, :exclusion => [nil]
@@ -19,7 +19,7 @@ class Event < ApplicationRecord
 
   def attendee_limit_reached?
     if attendee_limit <= guests.count
-      errors.add(:guests, "limit is reached")
+      errors.add(:guests, 'limit is reached')
     end
   end
 end
