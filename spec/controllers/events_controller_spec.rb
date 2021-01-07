@@ -1,18 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe EventsController, :type => :controller do
-    describe "GET #new" do
+    describe 'GET #new' do
     end
 
-    describe "PUT #create" do
+    describe 'PUT #create' do
     end
 
-    describe "GET #edit" do
+    describe 'GET #edit' do
     end
 
-    describe "PUT #update" do
+    describe 'PUT #update' do
     end
 
-    describe "DELETE #destroy" do
+    describe 'DELETE #destroy' do
     end
 end
