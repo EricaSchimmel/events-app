@@ -18,7 +18,7 @@ class Event < ApplicationRecord
   end
 
   def attendee_limit_reached?
-    if attendee_limit <= guests.count
+    if attendee_limit <= guests.size
       errors.add(:guests, 'limit is reached')
     end
   end
