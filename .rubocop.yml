@@ -24,3 +24,9 @@ Lint/AmbiguousBlockAssociation:
 
 Style/Documentation:
   Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: "single_quotes"
+
+Layout/IndentationStyle:
+  EnforcedStyle: "tabs"
