@@ -19,16 +19,18 @@
 
 - Ruby Version 2.6.6
 - Rails 6.0
-- [PostgreSQL](https://github.com/ged/ruby-pg)
-- [Devise](https://github.com/heartcombo/devise) - Authentication
+- [Devise](https://github.com/heartcombo/devise)
+- [Dotenv Rails](https://github.com/bkeepers/dotenv)
 - [Pagy](https://github.com/ddnexus/pagy)
+- [PostgreSQL](https://github.com/ged/ruby-pg)
 - Testing:
-  - [RSpec Rails](https://github.com/rspec/rspec-rails) - Testing Framework
   - [Capybara](https://github.com/teamcapybara/capybara)
-  - [Factory Bot Rails](https://github.com/thoughtbot/factory_bot_rails)
   - [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner)
-  - [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers)
+  - [Factory Bot Rails](https://github.com/thoughtbot/factory_bot_rails)
   - [Faker](https://github.com/faker-ruby/faker)
+  - [Rails Controller Testing](https://github.com/rails/rails-controller-testing)
+  - [RSpec Rails](https://github.com/rspec/rspec-rails)
+  - [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers)
   - [Spring-Commands-Rspec](https://github.com/jonleighton/spring-commands-rspec)
 
 ## Installation
