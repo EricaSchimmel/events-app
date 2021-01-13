@@ -33,11 +33,6 @@
   - [RSpec Rails](https://github.com/rspec/rspec-rails)
   - [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers)
   - [Spring-Commands-Rspec](https://github.com/jonleighton/spring-commands-rspec)
-- Linting/Formating:
-  - [Rubocop](https://github.com/rubocop-hq/rubocop)
-  - [Rubocop Performance](https://github.com/rubocop-hq/rubocop-performance)
-  - [Rubocop Rails](https://github.com/rubocop-hq/rubocop-rails)
-  - [Rubocop RSpec](https://github.com/rubocop-hq/rubocop-rspec)
 
 ## Installation
 
