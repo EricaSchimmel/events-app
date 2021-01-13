@@ -23,6 +23,7 @@
 - [Dotenv Rails](https://github.com/bkeepers/dotenv)
 - [Pagy](https://github.com/ddnexus/pagy)
 - [PostgreSQL](https://github.com/ged/ruby-pg)
+- [Validates Timeliness](https://github.com/adzap/validates_timeliness)
 - Testing:
   - [Capybara](https://github.com/teamcapybara/capybara)
   - [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner)
