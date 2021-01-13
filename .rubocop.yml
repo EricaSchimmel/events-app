@@ -29,4 +29,4 @@ Style/StringLiterals:
   EnforcedStyle: "single_quotes"
 
 Layout/IndentationStyle:
-  EnforcedStyle: "tabs"
+  EnforcedStyle: "spaces"
