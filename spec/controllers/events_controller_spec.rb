@@ -4,6 +4,11 @@ RSpec.describe EventsController, :type => :controller do
   describe 'GET #new' do
     it { should use_before_action(:authenticate_user!) }
 
+    it 'assigns @event with a new empty event' do
+      event = Event.new
+      expect(assigns(:event)).to eq(event)
+    end
+
     it { should render_template('new') }
   end
 
