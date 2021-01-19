@@ -4,7 +4,7 @@ RSpec.describe EventsController, :type => :controller do
   describe 'GET #new' do
     it { should use_before_action(:authenticate_user!) }
 
-    pending 'Renders the new template'
+    it { should render_template('new') }
   end
 
   describe 'PUT #create' do
@@ -15,15 +15,14 @@ RSpec.describe EventsController, :type => :controller do
 
   describe 'GET #show' do
     it { should use_before_action(:set_event) }
-
-    pending 'Renders the show template'
+    it { should render_template('show') }
   end
 
   describe 'GET #edit' do
     it { should use_before_action(:authenticate_user!) }
     it { should use_before_action(:set_event) }
 
-    pending 'Renders the edit template'
+    it { should render_template('edit') }
   end
 
   describe 'PUT #update' do
