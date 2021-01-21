@@ -2,8 +2,6 @@ class Event < ApplicationRecord
   belongs_to :host, :class_name => 'User'
   has_many :guests, :class_name => 'Reservation'
 
-  validates_length_of :guests, :maximum => :guest_limit, :unless => -> { guest_limit.nil? }
-
   validates_presence_of :start_date, :end_date
   validates :online, :exclusion => [nil]
 
