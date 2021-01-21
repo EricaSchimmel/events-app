@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_09_024543) do
+ActiveRecord::Schema.define(version: 2021_01_21_013430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_01_09_024543) do
     t.boolean "online"
     t.datetime "start_date"
     t.string "online_link"
-    t.integer "attendee_limit"
+    t.integer "guest_limit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "host_id"
