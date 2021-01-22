@@ -14,6 +14,6 @@ class Reservation < ApplicationRecord
   def validate_existing
     return unless event && user
 
-    errors.add(:base, 'reservation already created') if !event.guests.find_by(user_id: user.id).nil?
+    errors.add(:base, 'reservation already created') unless event.guests.find_by(:user_id => user.id).nil?
   end
 end
