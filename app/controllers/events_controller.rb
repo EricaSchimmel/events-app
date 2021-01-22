@@ -34,7 +34,7 @@ class EventsController < ApplicationController
       :description,
       :online,
       :online_link,
-      :attendee_limit,
+      :guest_limit,
       :host_id
     )
   end

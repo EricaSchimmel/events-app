@@ -18,5 +18,5 @@ user1.hosted_events.create(
     start_date: Faker::Time.between(:from => DateTime.now, :to => DateTime.now + 1),
     end_date: Faker::Time.between(:from => DateTime.now + 2, :to => DateTime.now + 3),
     online_link: Faker::Internet.url,
-    attendee_limit: 15
+    guest_limit: 3
 )
