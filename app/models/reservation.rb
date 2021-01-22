@@ -5,10 +5,8 @@ class Reservation < ApplicationRecord
   validate :validate_quota, :on => :create
 
   def validate_quota
-    return unless !self.event.guest_limit.nil? && self.event.guest_limit != 0
+    return unless !event.guest_limit.nil? && event.guest_limit != 0
 
-    if self.event.guests.reload.size >= self.event.guest_limit
-      errors.add(:base, 'guest limit reached')
-    end
+    errors.add(:base, 'guest limit reached') if event.guests.reload.size >= event.guest_limit
   end
 end
