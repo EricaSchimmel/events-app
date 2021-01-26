@@ -4,14 +4,21 @@ RSpec.describe 'Events', :type => :request do
   describe 'GET #index' do
     # before(:each) { get events_path }
 
-    pending 'it assigns all events to @events'
+    pending 'it assigns all events to @events' do
+      create(:event)
+      expect(assigns(:events)).to eq(Event.all)
+    end
+
     pending 'it responds with a successful status'
   end
 
   describe 'GET #new' do
     # before(:each) { get new_event_path }
 
-    pending 'it assigns a new empty event to @event'
+    pending 'it assigns a new empty event to @event' do
+      expect(assigns(:event)).to be_a_new(Event)
+    end
+
     pending 'it responds with a successful status'
   end
 
@@ -22,7 +29,11 @@ RSpec.describe 'Events', :type => :request do
   describe 'GET #edit' do
     # before(:each) { get edit_event_path }
 
-    pending 'it assigns @event with an existing event'
+    pending 'it assigns @event with an existing event' do
+      event = create(:event)
+      expect(assigns(:event)).to eq(event)
+    end
+
     pending 'it responds with a successful status'
   end
 
