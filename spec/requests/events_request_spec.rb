@@ -9,7 +9,9 @@ RSpec.describe 'Events', :type => :request do
       expect(assigns(:events)).to eq(Event.all)
     end
 
-    pending 'it responds with a successful status'
+    pending 'it responds with a successful status' do
+      expect(response).to have_http_status(:successful)
+    end
   end
 
   describe 'GET #new' do
@@ -19,7 +21,9 @@ RSpec.describe 'Events', :type => :request do
       expect(assigns(:event)).to be_a_new(Event)
     end
 
-    pending 'it responds with a successful status'
+    pending 'it responds with a successful status' do
+      # expect(response).to have_http_status(:successful)
+    end
   end
 
   describe 'POST #create' do
@@ -34,7 +38,9 @@ RSpec.describe 'Events', :type => :request do
       expect(assigns(:event)).to eq(event)
     end
 
-    pending 'it responds with a successful status'
+    pending 'it responds with a successful status' do
+      # expect(response).to have_http_status(:successful)
+    end
   end
 
   describe 'PATCH #update' do
