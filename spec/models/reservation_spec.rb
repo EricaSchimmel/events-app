@@ -11,10 +11,10 @@ RSpec.describe Reservation, :type => :model do
 
     it "is invalid when an event's guest limit is reached" do
       3.times do
-        create(:reservation, event_id: event.id)
+        create(:reservation, :event_id => event.id)
       end
 
-      reservation = build(:reservation, event_id: event.id)
+      reservation = build(:reservation, :event_id => event.id)
       expect(reservation).to_not be_valid
     end
 

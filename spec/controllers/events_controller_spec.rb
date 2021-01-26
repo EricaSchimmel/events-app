@@ -14,8 +14,6 @@ RSpec.describe EventsController, :type => :controller do
 
   describe 'PUT #create' do
     it { should use_before_action(:authenticate_user!) }
-
-    pending 'Creates a new event succesfully'
   end
 
   describe 'GET #show' do
@@ -32,14 +30,10 @@ RSpec.describe EventsController, :type => :controller do
 
   describe 'PUT #update' do
     it { should use_before_action(:authenticate_user!) }
-
-    pending 'Updates a event with new valid data succesfully'
   end
 
   describe 'DELETE #destroy' do
     it { should use_before_action(:authenticate_user!) }
     it { should use_before_action(:set_event) }
-
-    pending 'Deletes the event'
   end
 end
