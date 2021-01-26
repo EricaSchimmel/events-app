@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Reservations", :type => :request do
+RSpec.describe 'Reservations', :type => :request do
   describe 'GET #index' do
     pending 'it assigns a list of all reservations to @reservations'
     pending 'it has a successful status'
