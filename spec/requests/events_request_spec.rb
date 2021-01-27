@@ -49,6 +49,9 @@ RSpec.describe 'Events', :type => :request do
 
   describe 'DELETE #destroy' do
     pending 'it succesfully deletes the existing event'
-    pending 'it returns an error status with a non-existing event'
+
+    pending 'it returns an error status with a non-existing event' do
+      # expect(reponse).to have_http_status(:error)
+    end
   end
 end
