@@ -22,7 +22,7 @@ RSpec.describe 'Events', :type => :request do
     end
 
     pending 'it responds with a successful status' do
-      # expect(response).to have_http_status(:successful)
+      expect(response).to have_http_status(:successful)
     end
   end
 
@@ -39,7 +39,7 @@ RSpec.describe 'Events', :type => :request do
     end
 
     pending 'it responds with a successful status' do
-      # expect(response).to have_http_status(:successful)
+      expect(response).to have_http_status(:successful)
     end
   end
 
@@ -51,7 +51,7 @@ RSpec.describe 'Events', :type => :request do
     pending 'it succesfully deletes the existing event'
 
     pending 'it returns an error status with a non-existing event' do
-      # expect(reponse).to have_http_status(:error)
+      expect(reponse).to have_http_status(:error)
     end
   end
 end
