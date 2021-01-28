@@ -79,10 +79,26 @@ RSpec.describe 'Events', :type => :request do
   end
 
   describe 'DELETE #destroy' do
-    pending 'it succesfully deletes the existing event'
+    context 'when an existing event is specified' do
+      let!(:event) { create(:event) }
 
-    pending 'it returns an error status with a non-existing event' do
-      expect(reponse).to have_http_status(:error)
+      before(:each) { delete event_path, :params => { :id => event.id } }
+
+      pending 'it responds with a successful status' do
+        expect(response).to have_http_status(:successful)
+      end
+
+      pending 'it will have the specified event be deleted after the request' do
+        expect(event).to be_nil
+      end
+    end
+
+    context 'when a non-existant event is specified' do
+      pending 'it responds with a error status' do
+        delete event_path, :params => { :id => 0 }
+
+        expect(response).to have_http_status(:error)
+      end
     end
   end
 end
