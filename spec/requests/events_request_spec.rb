@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Events', :type => :request do
   describe 'GET #index' do
-    let!(:event) { create(:event) }
-    before(:each) { get events_path }
+    before(:each) do
+      create(:event)
+      get events_path
+    end
 
     pending 'it assigns all events to @events' do
       expect(assigns(:events)).to eq(Event.all)
@@ -27,7 +29,7 @@ RSpec.describe 'Events', :type => :request do
   end
 
   describe 'POST #create' do
-    context 'correct parameters are given' do
+    context 'when correct parameters are given' do
       pending 'it responds with a created status' do
         post event_reservations_path, :params => attributes_for(:event)
 
@@ -35,7 +37,7 @@ RSpec.describe 'Events', :type => :request do
       end
     end
 
-    context 'incorrect parameters are given' do
+    context 'when incorrect parameters are given' do
       pending 'it responds with a error status' do
         post event_reservations_path, :params => attributes_for(:event, :title => nil)
 
@@ -46,6 +48,7 @@ RSpec.describe 'Events', :type => :request do
 
   describe 'GET #edit' do
     let!(:event) { create(:event) }
+
     before(:each) { get edit_event_path, :params => { :event_id => event.id } }
 
     pending 'it assigns @event with an existing event' do
@@ -58,7 +61,21 @@ RSpec.describe 'Events', :type => :request do
   end
 
   describe 'PATCH #update' do
-    pending 'it updates the existing event with new data'
+    context 'when correct parameters are given' do
+      pending 'it returns a successful status' do
+        patch event_path, :params => attributes_for(:event, :title => 'asdf')
+
+        expect(response).to have_http_status(:successful)
+      end
+    end
+
+    context 'when invalid parameters are given' do
+      pending 'it returns a error status' do
+        patch event_path, :params => attributes_for(:event, :title => nil)
+
+        expect(response).to have_http_status(:error)
+      end
+    end
   end
 
   describe 'DELETE #destroy' do
