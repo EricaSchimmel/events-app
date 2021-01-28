@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Events', :type => :request do
   describe 'GET #index' do
-    # before(:each) { get events_path }
+    let!(:event) { create(:event) }
+    before(:each) { get events_path }
 
     pending 'it assigns all events to @events' do
-      create(:event)
       expect(assigns(:events)).to eq(Event.all)
     end
 
@@ -15,7 +15,7 @@ RSpec.describe 'Events', :type => :request do
   end
 
   describe 'GET #new' do
-    # before(:each) { get new_event_path }
+    before(:each) { get new_event_path }
 
     pending 'it assigns a new empty event to @event' do
       expect(assigns(:event)).to be_a_new(Event)
@@ -31,10 +31,10 @@ RSpec.describe 'Events', :type => :request do
   end
 
   describe 'GET #edit' do
-    # before(:each) { get edit_event_path }
+    let!(:event) { create(:event) }
+    before(:each) { get edit_event_path, :params => { :event_id => event.id } }
 
     pending 'it assigns @event with an existing event' do
-      event = create(:event)
       expect(assigns(:event)).to eq(event)
     end
 

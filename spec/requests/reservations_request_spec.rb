@@ -7,7 +7,7 @@ RSpec.describe 'Reservations', :type => :request do
       before(:each) { get event_reservations_path, :params => { :event_id => event.id } }
 
       pending 'it assigns a list of all reservations to @reservations' do
-        create(:reservation, event_id: event.id)
+        create(:reservation, :event_id => event.id)
         expect(assigns(:reservations)).to eq(event.guests)
       end
 
