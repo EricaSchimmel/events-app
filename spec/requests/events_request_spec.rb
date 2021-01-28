@@ -27,7 +27,21 @@ RSpec.describe 'Events', :type => :request do
   end
 
   describe 'POST #create' do
-    pending 'it successfully creates a event'
+    context 'correct parameters are given' do
+      pending 'it responds with a created status' do
+        post event_reservations_path, :params => attributes_for(:event)
+
+        expect(response).to have_http_status(:created)
+      end
+    end
+
+    context 'incorrect parameters are given' do
+      pending 'it responds with a error status' do
+        post event_reservations_path, :params => attributes_for(:event, :title => nil)
+
+        expect(response).to have_http_status(:error)
+      end
+    end
   end
 
   describe 'GET #edit' do
