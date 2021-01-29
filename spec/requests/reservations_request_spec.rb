@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Reservations', :type => :request do
   describe 'GET #index' do
-    context 'a parameter with an existing event is specified' do
+    context 'when a parameter with an existing event is specified' do
       let!(:event) { create(:event) }
       before(:each) { get event_reservations_path, :params => { :event_id => event.id } }
 
@@ -16,7 +16,7 @@ RSpec.describe 'Reservations', :type => :request do
       end
     end
 
-    context 'a non-existing event is specified' do
+    context 'when a non-existing event is specified' do
       pending 'it returns an errors status with for a non-exiting event' do
         get event_reservations_path, :params => { :event_id => 0 }
         expect(reponse).to have_http_status(:error)
