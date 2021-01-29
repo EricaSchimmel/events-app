@@ -6,9 +6,17 @@ class EventsController < ApplicationController
   end
 
   def new
+    @event = Event.new
   end
 
   def create
+    @event = current_user.hosted_events.build(event_params)
+
+    if @event.save?
+      redirect_to event_path(@event), :notice => 'Your event was successfully created!'
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -21,6 +29,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    @event.destroy
   end
 
   private
