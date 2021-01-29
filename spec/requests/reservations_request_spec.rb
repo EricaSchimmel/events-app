@@ -25,7 +25,21 @@ RSpec.describe 'Reservations', :type => :request do
   end
 
   describe 'POST #create' do
-    pending 'it creates a new reservation'
+    context 'when a existing event is specified' do
+      pending 'it responds with a created status' do
+        event = create(:event)
+        post event_reservations_path, :params => { :event_id => event.id }
+
+        expect(response).to have_http_status(:created)
+      end
+    end
+
+    context 'when a non-existant event is specified' do
+      pending 'it responds with an error status' do
+        post event_reservations_path, :params => { :event_id => 0 }
+        expect(response).to have_http_status(:error)
+      end
+    end
   end
 
   describe 'DELETE #destroy' do
