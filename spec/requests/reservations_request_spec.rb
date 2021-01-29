@@ -43,10 +43,26 @@ RSpec.describe 'Reservations', :type => :request do
   end
 
   describe 'DELETE #destroy' do
-    pending 'it deletes a existing reservation'
+    context 'when an existing reservation is specified' do
+      let!(:reservation) { create(:reservation) }
 
-    pending 'it returns an error status with a non-existing reservation' do
-      expect(reponse).to have_http_status(:error)
+      before(:each) { delete reservation_path, :params => { :id => reservation.id } }
+
+      pending 'it responds with a successful status' do
+        expect(response).to have_http_status(:successful)
+      end
+
+      pending 'it will have the specified reservation be deleted after the request' do
+        expect(reservation).to be_nil
+      end
+    end
+
+    context 'when a non-existant reservation is specified' do
+      pending 'it responds with a error status' do
+        delete reservation_path, :params => { :id => 0 }
+
+        expect(response).to have_http_status(:error)
+      end
     end
   end
 end
