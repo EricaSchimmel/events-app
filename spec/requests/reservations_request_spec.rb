@@ -19,7 +19,7 @@ RSpec.describe 'Reservations', :type => :request do
     context 'when a non-existing event is specified' do
       pending 'it returns an errors status with for a non-exiting event' do
         get event_reservations_path, :params => { :event_id => 0 }
-        expect(reponse).to have_http_status(:error)
+        expect(response).to have_http_status(:error)
       end
     end
   end
@@ -34,7 +34,7 @@ RSpec.describe 'Reservations', :type => :request do
       end
     end
 
-    context 'when a non-existant event is specified' do
+    context 'when a non-existent event is specified' do
       pending 'it responds with an error status' do
         post event_reservations_path, :params => { :event_id => 0 }
         expect(response).to have_http_status(:error)
@@ -57,7 +57,7 @@ RSpec.describe 'Reservations', :type => :request do
       end
     end
 
-    context 'when a non-existant reservation is specified' do
+    context 'when a non-existent reservation is specified' do
       pending 'it responds with a error status' do
         delete reservation_path, :params => { :id => 0 }
 

@@ -93,7 +93,7 @@ RSpec.describe 'Events', :type => :request do
       end
     end
 
-    context 'when a non-existant event is specified' do
+    context 'when a non-existent event is specified' do
       pending 'it responds with a error status' do
         delete event_path, :params => { :id => 0 }
 
