@@ -24,7 +24,13 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 
+# gem 'hotwire-rails'
+
 gem 'pagy'
+
+# gem 'ransack', github: 'activerecord-hackery/ransack'
+
+# gem 'simple_form'
 
 gem 'validates_timeliness', '~> 5.0.0.beta1'
 
