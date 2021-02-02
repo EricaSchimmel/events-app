@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     if @event.save?
       redirect_to event_path(@event), :notice => 'Your event was successfully created!'
     else
-      render 'new'
+      render :new
     end
   end
 
