@@ -8,5 +8,5 @@ class User < ApplicationRecord
                    :format => { :without => /[^a-zA-Z\s.']/, :message => 'must only contain letters, periods, and apostrophes.' }
 
   has_many :hosted_events, :class_name => 'Event', :foreign_key => :host_id
-  has_many :reservations
+  has_many :reservations, :dependent => :delete_all
 end
