@@ -26,6 +26,11 @@ class EventsController < ApplicationController
   end
 
   def update
+    if @event.update(event_params)
+      redirect_to event_path(@event), :notice => 'Your changes have been saved.'
+    else
+      render :edit
+    end
   end
 
   def destroy
