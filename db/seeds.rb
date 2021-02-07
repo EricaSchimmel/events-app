@@ -1,7 +1,7 @@
 3.times do
     User.create(
         name: Faker::Name.name[2..30],
-        email: Faker::Internet.email,
+        email: Faker::Internet.safe_email,
         password: "password",
         password_confirmation: "password"
     )
