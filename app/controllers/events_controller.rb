@@ -3,6 +3,11 @@ class EventsController < ApplicationController
   before_action :set_event, :only => [:show, :edit, :update, :destroy]
 
   def index
+    if params[:user_id]
+      @pagy, @events = pagy(Event.where(:host_id => params[:user_id]))
+    else
+      @pagy, @events = pagy(Event.all)
+    end
   end
 
   def new
