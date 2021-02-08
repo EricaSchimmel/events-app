@@ -2,7 +2,13 @@ class ReservationsController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
 
   def index
-    @pagy, @reservations = pagy(Reservation.where(:event_id => params[:event_id]))
+    if params[:event_id]
+      @pagy, @reservations = pagy(Reservation.where(:event_id => params[:event_id]))
+
+    elsif params[:user_id]
+      authenticate_user!
+      @pagy, @reservations = pagy(Reservation.where(:user_id => params[:user_id]))
+    end
   end
 
   def create
