@@ -3,9 +3,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :events do 
+  resources :users, only: [:show] do
+    resources :events, only: [:index]
+  end
+
+  resources :events do
     resources :reservations, only: [:index, :create]
-  end 
+  end
 
   resources :reservations, only: [:destroy]
 end
