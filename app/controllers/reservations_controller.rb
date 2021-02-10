@@ -7,6 +7,8 @@ class ReservationsController < ApplicationController
 
     elsif params[:user_id]
       authenticate_user!
+      user_can_view_private_page?
+
       @pagy, @reservations = pagy(Reservation.where(:user_id => params[:user_id]))
     end
   end
