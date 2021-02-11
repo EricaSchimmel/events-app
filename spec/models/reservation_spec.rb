@@ -25,6 +25,20 @@ RSpec.describe Reservation, :type => :model do
       reservation = build(:reservation, :event_id => event.id, :user_id => user.id)
       expect(reservation).to_not be_valid
     end
+
+    it 'is invalid when an event has already started' do
+      event = build(:event, :start_date => DateTime.now)
+
+      reservation = build(:reservation, :event_id => event.id)
+      expect(reservation).to_not be_valid
+    end
+
+    it 'is invalid when an event has already ended' do
+      event = build(:event, :start_date => DateTime.now - 2, :end_date => DateTime.now - 1)
+
+      reservation = build(:reservation, :event_id => event.id)
+      expect(reservation).to_not be_valid
+    end
   end
 
   describe 'associations' do
