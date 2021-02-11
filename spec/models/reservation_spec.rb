@@ -39,6 +39,14 @@ RSpec.describe Reservation, :type => :model do
       reservation = build(:reservation, :event_id => event.id)
       expect(reservation).to_not be_valid
     end
+
+    it 'is invalid when a host tries to reserve to their own event' do
+      user = create(:user)
+      event = create(:event, :host_id => user.id)
+
+      reservation = build(:reservation, :event_id => event.id, :user_id => user.id)
+      expect(reservation).to_not be_valid
+    end
   end
 
   describe 'associations' do
