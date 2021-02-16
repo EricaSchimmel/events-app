@@ -1,6 +1,6 @@
 <%= form_for(event) do |f| %>
     <%= f.label :title %><br />
-    <%= f.text_field :title %><br />
+    <%= f.text_field :title, placeholder: 'Example Event' %><br />
 
     <%= f.label :start_date %><br />
     <%= f.datetime_field :start_date %><br />
@@ -8,10 +8,11 @@
     <%= f.label :end_date %><br />
     <%= f.datetime_field :end_date %><br />
 
-    <%= f.label :online, 'Is the event online?' %><br />
+    <%= f.check_box :online %>
+    <%= f.label :online, 'Online Event?' %><br />
 
     <%= f.label :online_link, 'URL to join the online event:' %><br />
-    <%= f.url_field :online_link %><br />
+    <%= f.url_field :online_link, placeholder: 'https://example.com/' %><br />
 
     <%= f.label :description %><br />
     <%= f.text_area :description %><br />
