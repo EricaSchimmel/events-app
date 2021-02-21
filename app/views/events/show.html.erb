@@ -1,0 +1,10 @@
+<h1><%= @event.title %></h1>
+<h3>Hosted By: <%= @event.host.name %></h3>
+
+<p><%= @event.start_date %> - <%= @event.end_date %></p>
+
+<p><%= @event.description %></p>
+
+<% if current_user %>
+    <%= link_to 'Attend Event', event_reservations_path(@event.id) %>
+<% end %>
