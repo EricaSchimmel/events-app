@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
     redirect_to user_session, :alert => 'You cannot access that page.' if current_user.id != params[:user_id]
   end
 
+  def user_can_do_private_action?(user_id)
+    redirect_to user_session, :alert => 'You cannot perform that action.' if current_user.id != id
+  end
+
   protected
 
   def configure_permitted_parameters

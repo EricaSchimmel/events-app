@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
     @reservation = current_user.reservations.build(:event_id => params[:event_id])
 
     if @reservation.save?
-      redirect_to event_path(params[:event_id])
+      redirect_to event_path(params[:event_id]), :notice => "You've been successfully reserved to the event!"
     else
       redirect_to event_path(params[:event_id]),
                   :alert => "Reservation could not be created because #{@reservation.errors.full_messages}"
