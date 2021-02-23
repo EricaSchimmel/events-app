@@ -10,7 +10,7 @@
         <%= link_to 'Attend Event', event_reservations_path(@event.id) %>
 
     <% else %>
-        <p>Cancel Reservation</p>
+        <%= link_to 'Cancel Reservation', reservation_path(current_user.reservations.find_by(:event_id => @event.id).id), :method => :delete %>
     <% end %>
 
 <% else %>
