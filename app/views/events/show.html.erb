@@ -5,6 +5,14 @@
 
 <p><%= @event.description %></p>
 
-<% if current_user %>
-    <%= link_to 'Attend Event', event_reservations_path(@event.id) %>
+<% if current_user && current_user != @event.host %>
+    <% if !current_user.reservations.find_by(:event_id => @event.id) %>
+        <%= link_to 'Attend Event', event_reservations_path(@event.id) %>
+
+    <% else %>
+        <p>Cancel Reservation</p>
+    <% end %>
+
+<% else %>
+    <p>You must be <%= link_to 'logged in', new_user_session_path %> to reserve to this event.</p>
 <% end %>
