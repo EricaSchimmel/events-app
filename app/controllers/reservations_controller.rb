@@ -25,6 +25,8 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
+    user_can_do_private_action?(@reservation.user_id)
+
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
 
