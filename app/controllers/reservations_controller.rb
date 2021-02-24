@@ -27,5 +27,7 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
+
+    redirect_to root_url, :notice => 'Your reservation has been canceled.'
   end
 end
