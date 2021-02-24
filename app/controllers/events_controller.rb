@@ -28,9 +28,12 @@ class EventsController < ApplicationController
   end
 
   def edit
+    user_can_do_private_action?(@event.host_id)
   end
 
   def update
+    user_can_do_private_action?(@event.host_id)
+
     if @event.update(event_params)
       redirect_to event_path(@event), :notice => 'Your changes have been saved.'
     else
@@ -39,7 +42,10 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    user_can_do_private_action?(@event.host_id)
     @event.destroy
+
+    redirect_to root_url, :notice => 'Your event has been successfully deleted'
   end
 
   private

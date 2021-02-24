@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_can_do_private_action?(user_id)
-    redirect_to user_session, :alert => 'You cannot perform that action.' if current_user.id != id
+    redirect_to user_session, :alert => 'You cannot perform that action.' if current_user.id != user_id
   end
 
   protected
