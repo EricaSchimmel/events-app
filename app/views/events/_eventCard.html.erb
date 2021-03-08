@@ -1,0 +1,4 @@
+<h1><%= link_to event.title, event_path(event) %></h1>
+<p>Hosted by: <% event.host.name %></p>
+
+<p><% event.guests.size %> Guests</p>
