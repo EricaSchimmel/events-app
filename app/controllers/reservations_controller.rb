@@ -41,7 +41,7 @@ class ReservationsController < ApplicationController
 
     @event = Event.find(params[:event_id])
 
-    #TODO: Change url path to root_url once made
+    # TODO: Change url path to root_url once made
     redirect_to user_path(1), :alert => 'Event does not exist.' if @event.nil?
   end
 end
