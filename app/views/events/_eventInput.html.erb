@@ -14,7 +14,7 @@
     <%= f.label :online_link, 'URL to join the online event' %><br />
     <%= f.url_field :online_link, placeholder: 'https://example.com/' %><br />
 
-    <%= f.label :guest_limit %><br />
+    <%= f.label :guest_limit, 'Guest Limit (Leave at 0 for no limit)' %><br />
     <%= f.number_field :guest_limit, min: 0 %><br />
 
     <%= f.label :description %><br />
