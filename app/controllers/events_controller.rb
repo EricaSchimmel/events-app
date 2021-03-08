@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
-  before_action :set_event, :only => [:show]
-  before_action :set_event_and_check_user_event_access, :only => [:edit, :update, :destroy]
+  before_action :set_event, :only => [:show, :edit]
+  before_action :set_event_and_check_user_event_access, :only => [:update, :destroy]
 
   def index
     if params[:user_id]
@@ -49,6 +49,9 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
+
+    #TODO: Change url path to root_url once made
+    redirect_to user_path(1), :alert => 'Event does not exist.' if @event.nil?
   end
 
   def set_event_and_check_user_event_access
