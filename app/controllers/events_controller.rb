@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
-  before_action :set_event, :only => [:show, :edit, :update, :destroy]
+  before_action :set_event, :only => [:show]
+  before_action :set_event_and_check_user_event_access, :only => [:edit, :update, :destroy]
 
   def index
     if params[:user_id]
@@ -28,12 +29,9 @@ class EventsController < ApplicationController
   end
 
   def edit
-    user_can_do_private_action?(@event.host_id)
   end
 
   def update
-    user_can_do_private_action?(@event.host_id)
-
     if @event.update(event_params)
       redirect_to event_path(@event), :notice => 'Your changes have been saved.'
     else
@@ -42,7 +40,6 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    user_can_do_private_action?(@event.host_id)
     @event.destroy
 
     redirect_to root_url, :notice => 'Your event has been successfully deleted'
@@ -52,6 +49,11 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def set_event_and_check_user_event_access
+    set_event
+    user_can_do_private_action?(@event.host_id)
   end
 
   def event_params
