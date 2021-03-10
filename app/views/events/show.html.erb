@@ -7,7 +7,7 @@
 
 <% if current_user && current_user != @event.host %>
     <% if !current_user.reservations.find_by(:event_id => @event.id) %>
-        <%= link_to 'Attend Event', event_reservations_path(@event.id) %>
+        <%= link_to 'Attend Event', event_reservations_path(@event.id), :method => :post %>
 
     <% else %>
         <%= link_to 'Cancel Reservation', reservation_path(current_user.reservations.find_by(:event_id => @event.id).id), :method => :delete %>
